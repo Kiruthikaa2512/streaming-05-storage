@@ -232,6 +232,31 @@ to delete the topic and recreate it.
 
 </details>
 
+## Custom Project Enhancement
+
+This project was extended with a custom Kafka consumer named `kafka_consumer_kiruthikaa.py`.
+
+### Custom Business Logic
+
+The custom consumer enriches each consumed sales record with additional business intelligence fields:
+
+* `revenue_tier`
+
+  * `HIGH_VALUE` for orders with totals greater than or equal to 150
+  * `MEDIUM_VALUE` for orders with totals greater than or equal to 75
+  * `STANDARD_VALUE` for orders below 75
+
+* `fulfillment_priority`
+
+  * `CRITICAL` for high-value orders
+  * `PRIORITY` for medium-value orders
+  * `NORMAL` for standard-value orders
+
+### Business Value
+
+These enhancements demonstrate how Kafka streaming data can be transformed into actionable supply-chain insights. High-value orders can be automatically identified and prioritized for fulfillment while processed results continue to be stored in both CSV and DuckDB for later analysis.
+
+
 ## Notes
 
 - Use the **UP ARROW** and **DOWN ARROW** in the terminal to scroll through past commands.

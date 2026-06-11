@@ -52,7 +52,7 @@
   device_type: tablet
   payment_method: paypal
   referral_source: paid_search
-  discount_code: 
+  discount_code:
   customer_note: Gift for my team
 }
 2026-06-08 22:15:24 | INFO | P03 |   Sending message with key=US-TX
@@ -71,7 +71,7 @@
   device_type: mobile
   payment_method: paypal
   referral_source: paid_search
-  discount_code: 
+  discount_code:
   customer_note: Gift for my team
 }
 2026-06-08 22:15:26 | INFO | P03 |   Sending message with key=US-TX
@@ -90,7 +90,7 @@
   device_type: desktop
   payment_method: paypal
   referral_source: organic
-  discount_code: 
+  discount_code:
   customer_note: Learning at my own pace
 }
 2026-06-08 22:15:28 | INFO | P03 |   Sending message with key=CA-QC
@@ -109,7 +109,7 @@
   device_type: mobile
   payment_method: paypal
   referral_source: organic
-  discount_code: 
+  discount_code:
   customer_note: Highly recommend
 }
 2026-06-08 22:15:28 | INFO | P03 |   Sending message with key=US-CA
@@ -128,7 +128,7 @@
   device_type: mobile
   payment_method: apple_pay
   referral_source: paid_search
-  discount_code: 
+  discount_code:
   customer_note: Learning at my own pace
 }
 2026-06-08 22:15:30 | INFO | P03 |   Sending message with key=US-MO
@@ -147,8 +147,8 @@
   device_type: tablet
   payment_method: paypal
   referral_source: organic
-  discount_code: 
-  customer_note: 
+  discount_code:
+  customer_note:
 }
 2026-06-08 22:15:32 | INFO | P03 |   Sending message with key=CA-ON
 2026-06-08 22:15:32 | INFO | P03 |   MESSAGE SENT  sent=6
