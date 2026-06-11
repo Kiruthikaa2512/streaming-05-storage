@@ -281,11 +281,20 @@ def process_message(
         revenue_tier = "STANDARD_VALUE"
 
     enriched["revenue_tier"] = revenue_tier
+    if revenue_tier == "HIGH_VALUE":
+        fulfillment_priority = "CRITICAL"
+    elif revenue_tier == "MEDIUM_VALUE":
+        fulfillment_priority = "PRIORITY"
+    else:
+        fulfillment_priority = "NORMAL"
+
+    enriched["fulfillment_priority"] = fulfillment_priority
     LOG.info(f"subtotal={enriched['subtotal']}")
     LOG.info(f"tax={enriched['tax_amount']}")
     LOG.info(f"total={enriched['total']}")
     LOG.info(f"running_total={stats.total + enriched['total']:.2f}")
     LOG.info(f"revenue_tier={enriched['revenue_tier']}")
+    LOG.info(f"fulfillment_priority={enriched['fulfillment_priority']}")
 
     stats.update(enriched["total"])
 
@@ -350,7 +359,11 @@ def consume_messages(
         LOG.info(f"  order={enriched['order_id']}")
 
         # Also update the CSV as usual.
-        custom_fieldnames = [*CONSUMED_FIELDNAMES, "revenue_tier"]
+        custom_fieldnames = [
+            *CONSUMED_FIELDNAMES,
+            "revenue_tier",
+            "fulfillment_priority",
+]
         append_csv_row(
             path=OUTPUT_CSV,
             row={field: enriched.get(field, "") for field in custom_fieldnames},
